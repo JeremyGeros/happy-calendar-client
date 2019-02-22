@@ -3,15 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@lingui/react": "^2.7.0",
+    "classnames": "^2.2.6",
+    "luxon": "^1.4.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-input-autosize": "^2.2.1",
     "react-scripts": "2.0.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build:css": "postcss src/styles/index.css -o src/index.css",
+    "watch:css": "postcss src/styles/index.css -o src/index.css -w",
+    "start": "npm run watch:css & react-scripts start",
+    "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@lingui/macro": "^2.7.0",
+    "ajv": "^6.0.0",
+    "autoprefixer": "^9.1.0",
+    "babel-plugin-macros": "^2.4.2",
+    "postcss-cli": "^6.0.0",
+    "tailwindcss": "^0.6.4"
   },
   "eslintConfig": {
     "extends": "react-app"
